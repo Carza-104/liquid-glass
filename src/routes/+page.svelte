@@ -36,6 +36,7 @@
 		currentElement = event.currentTarget;
 		offsetX = event.clientX - currentElement.getBoundingClientRect().left;
 		offsetY = event.clientY - currentElement.getBoundingClientRect().top;
+
 		document.addEventListener('mousemove', onMouseMove);
 		document.addEventListener('mouseup', onMouseUp);
 	}
@@ -46,6 +47,10 @@
 		const touch = event.touches[0];
 		offsetX = touch.clientX - currentElement.getBoundingClientRect().left;
 		offsetY = touch.clientY - currentElement.getBoundingClientRect().top;
+
+		// Prevent default touch behavior:
+		event.preventDefault();
+
 		document.addEventListener('touchmove', onTouchMove);
 		document.addEventListener('touchend', onTouchEnd);
 	}
@@ -61,6 +66,9 @@
 		const touch = event.touches[0];
 		currentElement.style.left = `${touch.clientX - offsetX}px`;
 		currentElement.style.top = `${touch.clientY - offsetY}px`;
+
+		// Prevent default touch behavior:
+		event.preventDefault();
 	}
 
 	function onMouseUp() {
