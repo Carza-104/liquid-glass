@@ -1,5 +1,5 @@
 <script>
-	import filter from '$lib/assets/filter.svg';
+	import { filter } from '$lib';
 
 	let isDragging = false;
 	let offsetX = 0;
@@ -185,7 +185,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 16px;
-		height: 100vh;
+		height: calc(100vh - 32px);
 		left: 0px;
 		overflow: hidden;
 		padding: 16px;
