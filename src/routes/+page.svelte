@@ -75,15 +75,6 @@
 		document.removeEventListener('touchend', onTouchEnd);
 	}
 
-	// To disable scrolling:
-	document.addEventListener(
-		'touchmove',
-		function (event) {
-			event.preventDefault();
-		},
-		{ passive: false }
-	);
-
 	$: {
 		heightStyle = `${windowHeight - 32}px`;
 	}
