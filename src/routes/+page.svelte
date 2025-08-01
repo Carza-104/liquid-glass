@@ -73,13 +73,6 @@
 	}
 </script>
 
-<head>
-	<link
-		rel="stylesheet"
-		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-	/>
-</head>
-
 <main style="background-image: url({currentBackground})">
 	<div class="overlay"></div>
 	<h1>Liquid Glass</h1>
@@ -191,10 +184,13 @@
 		background-size: cover;
 		display: flex;
 		flex-direction: column;
-		gap: 32px;
+		gap: 16px;
 		height: 100vh;
-		padding: 16px;
+		left: 0px;
 		overflow: hidden;
+		padding: 16px;
+		position: absolute;
+		top: 0px;
 	}
 
 	.overlay {
