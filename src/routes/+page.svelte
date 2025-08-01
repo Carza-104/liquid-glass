@@ -1,6 +1,9 @@
 <script>
 	import { filter } from '$lib';
 
+	let windowHeight = undefined;
+	let heightStyle = '100vh';
+
 	let isDragging = false;
 	let offsetX = 0;
 	let offsetY = 0;
@@ -71,9 +74,15 @@
 		document.removeEventListener('touchmove', onTouchMove);
 		document.removeEventListener('touchend', onTouchEnd);
 	}
+
+	$: {
+		heightStyle = `${windowHeight - 32}px`;
+	}
 </script>
 
-<main style="background-image: url({currentBackground})">
+<svelte:window bind:innerHeight={windowHeight} />
+
+<main style="background-image: url({currentBackground}); height: {heightStyle}">
 	<div class="overlay"></div>
 	<h1>Liquid Glass</h1>
 	<p>
@@ -185,7 +194,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 16px;
-		height: calc(100vh - 32px);
+		/* height: calc(100vh - 32px); */
 		left: 0px;
 		overflow: hidden;
 		padding: 16px;
